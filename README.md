@@ -5,7 +5,7 @@
 - [wechat](#wechat)
 	- [微信官方开发文档](#微信官方开发文档)
 	- [详细项目如下](#详细项目如下)
-		- [!公众号 提醒](#)
+		- [公众号-提醒](#)
 
 ## 微信官方开发文档
 > 本工程基于 `WxJava`SDK包进行开发，大大简化了微信API调用，https://github.com/Wechat-Group/WxJava
@@ -17,4 +17,4 @@
 
 ## 详细项目如下
 
-### ![公众号 提醒](./wechat-offiaccount/README.md)
+### [公众号 提醒](./wechat-offiaccount/README.md)

@@ -19,7 +19,22 @@ wx:
   mp:
     useRedis: true
     configs:
-      - appId: 2222 # 第二个公众号的appid，以下同上
-        secret: 1111
-        token: 111
-        aesKey: 111
+    - appId:  # 第一个公众号的appid
+      secret:  # 公众号的appsecret
+      token:  # 接口配置里的Token值
+      aesKey:  # 接口配置里的EncodingAESKey值
+    - appId:  # 第一个公众号的appid
+      secret:  # 公众号的appsecret
+      token:  # 接口配置里的Token值
+      aesKey:  # 接口配置里的EncodingAESKey值
+
+config:
+  thread:
+    enabled: true
+    threadPrefix: Async-Service
+    corePoolSize: 10
+    maxPoolSize: 20
+    queueCapacity: 100
+    keepAliveSeconds: 15
+  purpose:
+    remind: wx3dffb886eea05a48
