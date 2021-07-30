@@ -18,6 +18,8 @@
         <java.version>1.8</java.version>
         <weixin-java.version>4.1.0</weixin-java.version>
         <hutool.version>4.5.17</hutool.version>
+        <mysql.connection.version>5.1.46</mysql.connection.version>
+        <ureport2.version>2.2.9</ureport2.version>
     </properties>
     <dependencies>
         <dependency>
@@ -44,9 +46,25 @@
             <version>${hutool.version}</version>
         </dependency>
         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connection.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
             <version>2.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.bstek.ureport</groupId>
+            <artifactId>ureport2-console</artifactId>
+            <version>${ureport2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
         </dependency>
 
 
