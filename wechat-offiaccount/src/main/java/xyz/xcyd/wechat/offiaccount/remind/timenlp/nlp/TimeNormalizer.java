@@ -295,7 +295,7 @@ public class TimeNormalizer implements Serializable {
         String classPath = path.substring(0, path.indexOf("/xyz/xcyd/wechat/offiaccount"));
         System.out.println(classPath+"/TimeExp.m");
         TimeNormalizer normalizer = new TimeNormalizer(classPath+"/TimeExp.m");
-        normalizer.parse("Hi，all.下周一下午三点开会");// 抽取时间
+        normalizer.parse("Hi，all.下周一下午三点开会,明天九点吃饭");// 抽取时间
         TimeUnit[] unit = normalizer.getTimeUnit();
         System.out.println(DateUtil.formatDateTime(unit[0].getTime()));
 

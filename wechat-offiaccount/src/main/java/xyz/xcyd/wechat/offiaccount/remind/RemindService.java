@@ -1,16 +1,12 @@
 package xyz.xcyd.wechat.offiaccount.remind;
 
-import cn.hutool.core.date.DateField;
-import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.IdUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
-import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import org.springframework.stereotype.Service;
-import xyz.xcyd.wechat.offiaccount.builder.TextBuilder;
 import xyz.xcyd.wechat.offiaccount.config.ProjectProperties;
 import xyz.xcyd.wechat.offiaccount.remind.timenlp.nlp.TimeNormalizer;
 import xyz.xcyd.wechat.offiaccount.remind.timenlp.nlp.TimeUnit;
@@ -40,9 +36,16 @@ public class RemindService {
 
         TimeUnit[] timeUnits = timeNormalizer.parse(wxMessage.getContent());
         if(timeUnits.length < 1){
-
+            log.error("内容解析失败 {}", wxMessage.getContent());
+            return "o(╥﹏╥)o 暂不支持！请试试换个说法吧\n如：明天早上八点叫我收蚂蚁能量";
         }else if(timeUnits.length > 1){
-
+            //处理带多个时间的内容
+            /**
+             * 1. 取出数组中的时间文字，分割事件
+             * 2. 判断连续周期事件，还是单独多个一次性事件
+             * 3. 单独事件处理
+             * 4. 周期事件判断
+             */
         }else {
             String cron = DateUtil.date(timeUnits[0].getTime()).toString("ss mm HH dd MM ?");
             remindTask.addScheduledTask(new RemindRunnable(p.getPurpose().getRemind(), wxMpService, wxMessage), cron, IdUtil.simpleUUID());
