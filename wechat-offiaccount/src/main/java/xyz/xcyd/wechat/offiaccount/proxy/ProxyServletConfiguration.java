@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * 代理HTTP请求
  */
-@Configuration
+//@Configuration
 @ConfigurationProperties(prefix = "config")
 public class ProxyServletConfiguration {
 

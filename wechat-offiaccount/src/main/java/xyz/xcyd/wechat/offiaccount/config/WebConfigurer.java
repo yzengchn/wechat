@@ -13,7 +13,7 @@ import javax.servlet.Servlet;
 /**
  *
  */
-@Configuration
+//@Configuration
 @ImportResource("classpath:ureport-console-context.xml")
 public class WebConfigurer implements WebMvcConfigurer {
 
