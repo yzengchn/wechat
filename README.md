@@ -14,6 +14,7 @@
 2. 小程序文档：https://developers.weixin.qq.com/miniprogram/dev/framework
 3. 开放平台文档：https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/getting_started/how_to_read.html
 4. 微信支付文档：https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pages/index.shtml
+5. 微信对话开发平台：https://openai.weixin.qq.com
 
 ## 详细项目如下
 
